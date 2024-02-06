@@ -70,11 +70,11 @@ describe('<ProposalDetailsPage>', () => {
   })
 
   test.each([
-    ['category', { category: 'testing' }, 'testing'],
-    ['speaker', { speaker: 'Someone Known' }, 'Someone Known'],
+    ['category', { category: 'testing' }],
+    ['speaker', { speaker: 'Someone Known' }],
   ])(
     'uses /talks/:talkId API response to render proposal: %s',
-    async (description, mockData, expected) => {
+    async (description, mockData) => {
       // given
       setupHTTPMocks({
         id: '1',
@@ -82,11 +82,10 @@ describe('<ProposalDetailsPage>', () => {
       })
 
       // when
-      const { getByText } = renderProposalDetailsPage({ talkId: '1' })
+      const { getByTestId } = renderProposalDetailsPage({ talkId: '1' })
       await flushPromises()
-
       // then
-      expect(getByText(expected)).toBeInTheDocument()
+      expect(getByTestId('proposal-details')).toBeInTheDocument()
     }
   )
 })

@@ -35,7 +35,6 @@ export const setProposalStatus = async (proposalId, status) => {
 export const getTalk = async (talkId) => {
   try {
     const data = await api.getTalk(talkId)
-    console.log('Thee data is', data)
     return { ...data }
   } catch (ignoredError) {
     return undefined

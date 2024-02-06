@@ -18,7 +18,6 @@ export const ProposalDetailsPage = ({ talkId }) => {
   useEffect(() => {
     getTalk(talkId).then((talk) => {
       setTalk(talk)
-      console.log('Talk is', talk)
       setIsLoading(false)
     })
   }, [talkId])

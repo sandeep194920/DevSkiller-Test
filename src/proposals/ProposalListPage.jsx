@@ -12,7 +12,6 @@ export const ProposalListPage = () => {
 
   useEffect(() => {
     getProposalList().then((proposals) => {
-      console.log('The proposals are', proposals)
       setIsLoading(false)
       setProposals(proposals)
     })
