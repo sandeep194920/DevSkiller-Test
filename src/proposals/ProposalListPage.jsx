@@ -18,13 +18,13 @@ export const ProposalListPage = () => {
     })
   }, [])
 
-  const updateProposalStatus = (id, status) => {
+  const updateProposalStatus = async (id, status) => {
     setProposals((previousProposals) => {
       return previousProposals.map((proposal) =>
         proposal.id === id ? { ...proposal, status } : proposal
       )
     })
-    setProposalStatus(id, status)
+    await setProposalStatus(id, status)
   }
 
   return (

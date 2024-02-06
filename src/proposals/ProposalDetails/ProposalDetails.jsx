@@ -11,6 +11,7 @@ const ProposalDetails = ({ talk }) => {
       <DetailsSection className="ProposalDetails__speaker" name="speaker">
         <span className="ProposalDetails__speaker__value">{speaker}</span>
       </DetailsSection>
+
       <DetailsSection className="ProposalDetails__category" name="category" />
       <DetailsSection
         className="ProposalDetails__description"

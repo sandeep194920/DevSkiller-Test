@@ -18,7 +18,7 @@ export const ProposalDetailsPage = ({ talkId }) => {
   useEffect(() => {
     getTalk(talkId).then((talk) => {
       setTalk(talk)
-      //   setIsNotFound(false)
+      console.log('Talk is', talk)
       setIsLoading(false)
     })
   }, [talkId])
@@ -28,14 +28,14 @@ export const ProposalDetailsPage = ({ talkId }) => {
   }
 
   return (
-    <Page className="ProposalDetailsPage" title={!talk ? '…' : 'title'}>
+    <Page className="ProposalDetailsPage" title={!talk ? '…' : talk.title}>
       <div className="ProposalDetailsPage__content">
         <div>
           <Link className="ProposalDetailsPage__back" to="/proposals">
             back to Call for Papers
           </Link>
         </div>
-        {isLoading ? <Loading /> : <ProposalDetails talk={{}} />}
+        {isLoading ? <Loading /> : <ProposalDetails talk={{ talk }} />}
       </div>
     </Page>
   )
