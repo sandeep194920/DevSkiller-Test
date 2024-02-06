@@ -35,7 +35,7 @@ export const ProposalDetailsPage = ({ talkId }) => {
             back to Call for Papers
           </Link>
         </div>
-        {isLoading ? <Loading /> : <ProposalDetails talk={{ talk }} />}
+        {isLoading ? <Loading /> : <ProposalDetails talk={talk} />}
       </div>
     </Page>
   )

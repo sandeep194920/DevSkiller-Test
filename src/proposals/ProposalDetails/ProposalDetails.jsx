@@ -6,6 +6,9 @@ import './ProposalDetails.css'
 
 const ProposalDetails = ({ talk }) => {
   const { speaker, description } = talk
+  console.log('THE SPEAKER FROM TEST IS', speaker)
+  console.log('THE desc FROM TEST IS', description)
+  console.log('THE TALK FROM TEST IS', talk)
   return (
     <div data-testid="proposal-details" className="ProposalDetails">
       <DetailsSection className="ProposalDetails__speaker" name="speaker">
