@@ -11,11 +11,16 @@ import ProposalDetails from './ProposalDetails'
 import './ProposalDetailsPage.css'
 
 export const ProposalDetailsPage = ({ talkId }) => {
+  const [isLoading, setIsLoading] = useState(true)
   const [isNotFound, setIsNotFound] = useState(false)
   const [talk, setTalk] = useState()
 
   useEffect(() => {
-    getTalk(talkId).then((talk) => setTalk(talk))
+    getTalk(talkId).then((talk) => {
+      setTalk(talk)
+      //   setIsNotFound(false)
+      setIsLoading(false)
+    })
   }, [talkId])
 
   if (isNotFound) {
@@ -30,8 +35,7 @@ export const ProposalDetailsPage = ({ talkId }) => {
             back to Call for Papers
           </Link>
         </div>
-        <Loading />
-        <ProposalDetails talk={{}} />
+        {isLoading ? <Loading /> : <ProposalDetails talk={{}} />}
       </div>
     </Page>
   )
