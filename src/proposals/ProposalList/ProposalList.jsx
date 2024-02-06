@@ -5,7 +5,7 @@ import ProposalRow from '../ProposalRow'
 
 import './ProposalList.css'
 
-const ProposalList = ({ proposals, onStatusUpdate }) => (
+const ProposalList = ({ proposals, onProposalStatusUpdate }) => (
   <ul data-testid="proposal-list" className="ProposalList">
     {proposals.map((proposal) => (
       <li key={proposal.id} className="ProposalList__item">
@@ -17,7 +17,7 @@ const ProposalList = ({ proposals, onStatusUpdate }) => (
           <ProposalRow
             proposal={proposal}
             onStatusUpdate={(id, status) => {
-              onStatusUpdate(id, status)
+              onProposalStatusUpdate(id, status)
             }}
           />
         </Link>
